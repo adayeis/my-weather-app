@@ -62,8 +62,20 @@ li {
   );
 }
 
-.bg-bluesky-dark {
+.bg-bluesky .bg-bluesky-dark {
   background-color: rgba(102, 188, 239, 0.3);
+}
+
+.bg-yellowsky {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 200, 124) 0%,
+    rgb(252, 251, 121) 90%
+  );
+}
+
+.bg-yellowsky .bg-yellowsky-dark {
+  background-color: rgba(255, 200, 124, 0.5);
 }
 
 #search-city {
@@ -93,7 +105,7 @@ li {
 
 .forecast-weather-emoji {
   font-size: 30px;
-  opacity: 70%;
+  opacity: 80%;
   position: relative;
   top: 5px;
 }

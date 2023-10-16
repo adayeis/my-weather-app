@@ -55,6 +55,26 @@ function writeCityData(response) {
   let cityWind = Math.round(response.data.wind.speed);
   let currentWind = document.querySelector("#wind");
   currentWind.innerHTML = cityWind;
+
+  /*****************************************BG COLORS************************************/
+  let container = document.querySelector("main");
+  let currentWeatherContainer = document.querySelector(
+    "#current-weather-container"
+  );
+  if (cityTemp > 20) {
+    container.classList.remove("bg-bluesky");
+    container.classList.add("bg-yellowsky");
+    let currentWeatherContainer = document.querySelector(
+      "#current-weather-container"
+    );
+    currentWeatherContainer.classList.remove("bg-bluesky-dark");
+    currentWeatherContainer.classList.add("bg-yellowsky-dark");
+  } else {
+    container.classList.remove("bg-yellowsky");
+    container.classList.add("bg-bluesky");
+    currentWeatherContainer.classList.remove("bg-yellowsky-dark");
+    currentWeatherContainer.classList.add("bg-bluesky-dark");
+  }
 }
 
 // Search City Button Event
