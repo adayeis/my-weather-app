@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  min-width: 200px;
+  line-height: 30px;
+}
+
+h2 {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  line-height: 1.5em;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+  color: rgb(188, 0, 0);
+}
+
+form {
+  display: inline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5em;
+}
+
+.bg-yellowsky {
+  background-color: rgba(238, 230, 0, 0.2);
+}
+
+.bg-bluesky {
+  background: radial-gradient(
+    circle at 0.7% 1%,
+    rgb(215, 248, 247) 0%,
+    rgb(102, 188, 239) 100.2%
+  );
+}
+
+.bg-bluesky-dark {
+  background-color: rgba(102, 188, 239, 0.3);
+}
+
+#search-city {
+  width: 100%;
+  padding: 8px;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: 0.5px solid black;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.3);
+}
+
+.forecast div {
+  display: flex;
+  float: left;
+}
+
+.current-weather {
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
+}
+
+.forecast ul {
+  font-size: 10px;
+  line-height: 1.5em;
+}
+
+.forecast-weather-emoji {
+  font-size: 30px;
+  opacity: 70%;
+  position: relative;
+  top: 5px;
+}
+
+.days {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.forecast-temprature {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#search-button {
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 0px 5px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(0, 0, 0);
+  color: whitesmoke;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
+}
+
+#current-button {
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 0px 5px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(188, 0, 0);
+  color: whitesmoke;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
+}
+
+#additional-content {
+  padding: 5px 0 0 5px;
+  font-size: 12px;
+}
+
+#current-weather-emoji {
+  font-size: 60px;
+  position: relative;
+  top: -25px;
+}
+
+#codedby {
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  width: 100%;
+}
+
+#metric {
+  font-size: 16px;
+  position: relative;
+  top: -10px;
+}
+
+#current-temp {
+  font-weight: 500;
+  font-size: 28px;
+}
