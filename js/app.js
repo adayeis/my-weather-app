@@ -39,6 +39,7 @@ function writeCityData(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${cityWeatherIcon}.png`
   );
+  currentWeatherIcon.setAttribute("alt", response.data.condition.description);
   // humidity
   let cityHum = response.data.temperature.humidity;
   let currentHumidity = document.querySelector("#humidity");
