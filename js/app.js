@@ -1,54 +1,46 @@
 /*****************************************ONLOAD****************************************/
 // Onload data get function
-function defaultCityWeather() {
-  let city = "istanbul";
-  let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+getCity("Istanbul");
+
+/*****************************************SEARCH BUTTON****************************************/
+function getCity(city) {
+  let apiKey = "67ct2f0dc4c74e3fcab1f74do85ff4a4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric `;
   axios.get(apiUrl).then(writeCityData);
 }
 
-defaultCityWeather();
-/*****************************************SEARCH BUTTON****************************************/
 // Search City get function
 function searcingCity(event) {
   event.preventDefault();
-  let searchCity = document.querySelector("#search-city");
-  let city = searchCity.value;
-  if (searchCity.value.length > 0) {
-    let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(writeCityData);
-  }
+  let searchCityElement = document.querySelector("#search-city");
+  let city = searchCityElement.value;
+  getCity(city);
 }
 
 // City Weather Result write function....
 function writeCityData(response) {
   // City name
-  let cityName = response.data.name;
+  console.log(response.data);
+  let cityName = response.data.city;
   let currentCity = document.querySelector("#current-city");
   currentCity.innerHTML = cityName;
   // City temp
-  let cityTemp = Math.round(response.data.main.temp);
+  let cityTemp = Math.round(response.data.temperature.current);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = cityTemp;
   // Weather description
-  let cityDes = response.data.weather[0].main;
+  let cityDes = response.data.condition.description;
   let currentDes = document.querySelector("#current-des");
   currentDes.innerHTML = cityDes;
   // Weather EMOJİ
-  if (cityDes === "Clouds") {
-    let currentEmoji = document.querySelector("#current-weather-emoji");
-    currentEmoji.innerHTML = "🌥";
-  } else if (cityDes === "Rain") {
-    let currentEmoji = document.querySelector("#current-weather-emoji");
-    currentEmoji.innerHTML = "🌧";
-  } else {
-    let currentEmoji = document.querySelector("#current-weather-emoji");
-    currentEmoji.innerHTML = "☀️";
-    // emojilerin devamı gelecek.
-  }
+  let cityWeatherIcon = response.data.condition.icon;
+  let currentWeatherIcon = document.querySelector("#current-weather-icon");
+  currentWeatherIcon.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${cityWeatherIcon}.png`
+  );
   // humidity
-  let cityHum = response.data.main.humidity;
+  let cityHum = response.data.temperature.humidity;
   let currentHumidity = document.querySelector("#humidity");
   currentHumidity.innerHTML = cityHum;
   //Wind
@@ -91,16 +83,16 @@ function searcingCityEnter(event) {
 }
 
 // Search Button Enter Event Add
-let searchCity = document.querySelector("#search-city");
-searchCity.addEventListener("keypress", searcingCityEnter); // search button ends
+let searchCityElement = document.querySelector("#search-city");
+searchCityElement.addEventListener("keypress", searcingCityEnter); // search button ends
 
 /*****************************************CURRENT BUTTON****************************************/
 // Current City button get function
 function currentCoordsWeather(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiKey = "67ct2f0dc4c74e3fcab1f74do85ff4a4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
   axios.get(apiUrl).then(writeCityData);
 }
 

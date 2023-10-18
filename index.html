@@ -65,31 +65,30 @@
             />
           </button>
         </div>
-
         <!--City search area ends-->
 
         <!--Current starts-->
-        <div class="mt-4">
+        <div class="mt-5">
           <div
-            class="row current-weather bg-bluesky-dark p-4 align-items-end justify-content-evenly"
+            class="row current-weather bg-bluesky-dark py-3 align-items-center justify-content-evenly"
             id="current-weather-container"
           >
-            <div class="col-6">
+            <div class="col-5 col-sm-3 justify-content-center">
               <ul>
                 <li>
                   <h1>
-                    <span id="current-city">...</span>
+                    <span id="current-city"></span>
                   </h1>
                 </li>
-                <li id="current-date">...</li>
-                <li id="current-day">...</li>
-                <li id="current-time">...</li>
+                <li id="current-date"></li>
+                <li id="current-day"></li>
+                <li id="current-time"></li>
               </ul>
             </div>
-            <div class="col-5 col-sm-4">
-              <div>
+            <div class="col-7">
+              <div class="d-flex justify-content-evenly align-items-center m-3">
+                <img src="" alt="..." id="current-weather-icon" />
                 <ul id="current-temprature">
-                  <li id="current-weather-emoji">☀️</li>
                   <li>
                     <span id="current-temp">...</span>
                     <span id="metric"> °C </span>
@@ -102,10 +101,10 @@
         </div>
         <div class="col-12 text-center mt-1 justify-content-center fst-italic">
           <ul id="additional-content">
-            <li class="d-inline-block p-2">
+            <li class="d-inline-block p-3">
               <strong>Humidity:</strong> <span id="humidity">...</span>% 😤
             </li>
-            <li class="d-inline-block p-2">
+            <li class="d-inline-block p-3">
               <strong>Wind:</strong> <span id="wind">...</span> km/h 💨
             </li>
           </ul>
@@ -115,9 +114,9 @@
       <!--Current ends-->
 
       <!--Forecast starts-->
-      <section class="row justify-content-evenly mt-3 forecast">
+      <section class="row justify-content-evenly mt-5 forecast">
         <div
-          class="col-4 col-md-2 py-2 shadow-sm justify-content-center rounded-3"
+          class="col-12 col-md-2 py-3 shadow-sm justify-content-center rounded-3"
         >
           <ul>
             <li class="days">Tue</li>
@@ -129,7 +128,7 @@
           </ul>
         </div>
         <div
-          class="col-4 col-md-2 py-2 shadow-sm justify-content-center rounded-3"
+          class="col-12 col-md-2 py-3 shadow-sm justify-content-center rounded-3"
         >
           <ul>
             <li class="days">Wed</li>
@@ -141,7 +140,7 @@
           </ul>
         </div>
         <div
-          class="col-4 col-md-2 py-2 shadow-sm justify-content-center rounded-3"
+          class="col-12 col-md-2 py-3 shadow-sm justify-content-center rounded-3"
         >
           <ul>
             <li class="days">Thu</li>
@@ -153,7 +152,7 @@
           </ul>
         </div>
         <div
-          class="col-4 col-md-2 py-2 shadow-sm justify-content-center rounded-3"
+          class="col-12 col-md-2 py-3 shadow-sm justify-content-center rounded-3"
         >
           <ul>
             <li class="days">Fri</li>
@@ -165,7 +164,7 @@
           </ul>
         </div>
         <div
-          class="col-4 col-md-2 py-2 shadow-sm justify-content-center rounded-3"
+          class="col-12 col-md-2 py-3 shadow-sm justify-content-center rounded-3"
         >
           <ul>
             <li class="days">Sat</li>
@@ -174,18 +173,6 @@
           <ul>
             <li class="forecast-temprature">31°C</li>
             <li>Clear</li>
-          </ul>
-        </div>
-        <div
-          class="col-4 col-md-2 py-2 d-md-none shadow-sm justify-content-center rounded-3"
-        >
-          <ul>
-            <li class="days">Sun</li>
-          </ul>
-          <div class="forecast-weather-emoji px-1">☀️</div>
-          <ul>
-            <li class="forecast-temprature">31°C</li>
-            <li>Partly Cloudy</li>
           </ul>
         </div>
         <!--Foracast end-->

@@ -147,10 +147,8 @@ li {
   font-size: 12px;
 }
 
-#current-weather-emoji {
-  font-size: 60px;
-  position: relative;
-  top: -25px;
+#current-weather-icon {
+  width: 50%;
 }
 
 #codedby {
