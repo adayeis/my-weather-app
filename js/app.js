@@ -111,7 +111,7 @@ function writeCityForecastData(response) {
     if (0 < index && index <= 6) {
       console.log(index);
       forecastHTML += `    
-       <div class="col-6 col-sm-4 shadow-sm justify-content-center rounded-3 align-items-center forecast-days">
+       <div class="col-6 col-sm-4 shadow-sm justify-content-center rounded-3 align-items-center text-center forecast-days">
           <ul>
             <li class="days">${formatDay(day.time)}</li>
                         <li>${day.condition.description}</li>
