@@ -53,7 +53,7 @@ li {
 .bg-bluesky {
   background: radial-gradient(
     circle at 0.7% 1%,
-    rgb(2, 188, 239) 0%,
+    rgb(88, 215, 250) 0%,
     rgb(215, 248, 247) 100.2%
   );
 }

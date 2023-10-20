@@ -93,16 +93,12 @@ function formatDay(timestamp) {
 
 function writeCityForecastData(response) {
   let forecastData = response.data.daily;
-  console.log(forecastData);
-
   let weatherForecast = document.querySelector("#weather-forecast");
-
   let forecastHTML = ``;
   forecastData.forEach(function (day, index) {
     if (0 < index && index <= 6) {
-      console.log(index);
       forecastHTML += `    
-       <div class="col-6 col-sm-4 shadow-sm justify-content-evenly rounded-3 align-items-center forecast-days px-4">
+       <div class="col-6 col-sm-4 shadow-sm justify-content-evenly rounded-3 align-items-center forecast-days px-4 pt-2">
           <ul class="col-6">
             <li class="days">${formatDay(day.time)}</li>
                         <li>${day.condition.description}</li>
