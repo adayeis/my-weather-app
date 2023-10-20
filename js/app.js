@@ -108,7 +108,8 @@ function writeCityForecastData(response) {
 
   let forecastHTML = ``;
   forecastData.forEach(function (day, index) {
-    if (index < 6) {
+    if (0 < index && index <= 6) {
+      console.log(index);
       forecastHTML += `    
        <div class="col-6 col-sm-4 shadow-sm justify-content-center rounded-3 align-items-center forecast-days">
           <ul>
