@@ -40,6 +40,15 @@ li {
   padding: 0;
 }
 
+p a {
+  font-size: 11px;
+}
+
+a span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .container {
   max-width: 700px;
   margin: 50px auto;
