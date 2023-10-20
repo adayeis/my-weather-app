@@ -20,53 +20,54 @@ function searcingCity(event) {
 // City Weather Result write function....
 function writeCityData(response) {
   // City name
-  console.log(response.data);
   let cityName = response.data.city;
-  let currentCity = document.querySelector("#current-city");
-  currentCity.innerHTML = cityName;
-  // City temp
-  let cityTemp = Math.round(response.data.temperature.current);
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = cityTemp;
-  // Weather description
-  let cityDes = response.data.condition.description;
-  let currentDes = document.querySelector("#current-des");
-  currentDes.innerHTML = cityDes;
-  // Weather EMOJİ
-  let cityWeatherIcon = response.data.condition.icon;
-  let currentWeatherIcon = document.querySelector("#current-weather-icon");
-  currentWeatherIcon.setAttribute(
-    "src",
-    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${cityWeatherIcon}.png`
-  );
-  currentWeatherIcon.setAttribute("alt", response.data.condition.description);
-  // humidity
-  let cityHum = response.data.temperature.humidity;
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = cityHum;
-  //Wind
-  let cityWind = Math.round(response.data.wind.speed);
-  let currentWind = document.querySelector("#wind");
-  currentWind.innerHTML = cityWind;
+  if (cityName != null) {
+    let currentCity = document.querySelector("#current-city");
+    currentCity.innerHTML = cityName;
+    // City temp
+    let cityTemp = Math.round(response.data.temperature.current);
+    let currentTemp = document.querySelector("#current-temp");
+    currentTemp.innerHTML = cityTemp;
+    // Weather description
+    let cityDes = response.data.condition.description;
+    let currentDes = document.querySelector("#current-des");
+    currentDes.innerHTML = cityDes;
+    // Weather EMOJİ
+    let cityWeatherIcon = response.data.condition.icon;
+    let currentWeatherIcon = document.querySelector("#current-weather-icon");
+    currentWeatherIcon.setAttribute(
+      "src",
+      `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${cityWeatherIcon}.png`
+    );
+    currentWeatherIcon.setAttribute("alt", response.data.condition.description);
+    // humidity
+    let cityHum = response.data.temperature.humidity;
+    let currentHumidity = document.querySelector("#humidity");
+    currentHumidity.innerHTML = cityHum;
+    //Wind
+    let cityWind = Math.round(response.data.wind.speed);
+    let currentWind = document.querySelector("#wind");
+    currentWind.innerHTML = cityWind;
 
-  /*****************************************BG COLORS************************************/
-  let container = document.querySelector("main");
-  let currentWeatherContainer = document.querySelector(
-    "#current-weather-container"
-  );
-  if (cityTemp > 20) {
-    container.classList.remove("bg-bluesky");
-    container.classList.add("bg-yellowsky");
+    /*****************************************BG COLORS************************************/
+    let container = document.querySelector("main");
     let currentWeatherContainer = document.querySelector(
       "#current-weather-container"
     );
-    currentWeatherContainer.classList.remove("bg-bluesky-dark");
-    currentWeatherContainer.classList.add("bg-yellowsky-dark");
-  } else {
-    container.classList.remove("bg-yellowsky");
-    container.classList.add("bg-bluesky");
-    currentWeatherContainer.classList.remove("bg-yellowsky-dark");
-    currentWeatherContainer.classList.add("bg-bluesky-dark");
+    if (cityTemp > 20) {
+      container.classList.remove("bg-bluesky");
+      container.classList.add("bg-yellowsky");
+      let currentWeatherContainer = document.querySelector(
+        "#current-weather-container"
+      );
+      currentWeatherContainer.classList.remove("bg-bluesky-dark");
+      currentWeatherContainer.classList.add("bg-yellowsky-dark");
+    } else {
+      container.classList.remove("bg-yellowsky");
+      container.classList.add("bg-bluesky");
+      currentWeatherContainer.classList.remove("bg-yellowsky-dark");
+      currentWeatherContainer.classList.add("bg-bluesky-dark");
+    }
   }
 }
 

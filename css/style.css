@@ -41,8 +41,8 @@ li {
 }
 
 .container {
-  max-width: 800px;
-  margin: 80px auto;
+  max-width: 600px;
+  margin: 50px auto;
   padding: 30px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 30px;
@@ -78,15 +78,6 @@ li {
   background-color: rgba(255, 200, 124, 0.5);
 }
 
-#search-city {
-  width: 100%;
-  padding: 8px;
-  padding-left: 15px;
-  border-radius: 10px;
-  border: 0.5px solid black;
-  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.3);
-}
-
 .forecast div {
   display: flex;
   float: left;
@@ -104,10 +95,9 @@ li {
 }
 
 .forecast-weather-emoji {
-  font-size: 30px;
+  width: 30%;
   opacity: 80%;
   position: relative;
-  top: 5px;
 }
 
 .days {
@@ -118,6 +108,15 @@ li {
 .forecast-temprature {
   font-size: 14px;
   font-weight: 500;
+}
+
+#search-city {
+  width: 100%;
+  padding: 8px;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: 0.5px solid black;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.3);
 }
 
 #search-button {
@@ -148,7 +147,14 @@ li {
 }
 
 #current-weather-icon {
-  width: 50%;
+  width: 60%;
+  position: relative;
+  top: 15px;
+}
+
+#current-temprature {
+  position: relative;
+  top: 20px;
 }
 
 #codedby {
