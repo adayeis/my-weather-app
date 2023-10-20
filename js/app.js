@@ -101,7 +101,9 @@ function writeCityForecastData(response) {
        <div class="col-6 col-sm-4 shadow-sm justify-content-evenly rounded-3 align-items-center forecast-days px-4 pt-2">
           <ul class="col-6">
             <li class="days">${formatDay(day.time)}</li>
-                        <li>${day.condition.description}</li>
+                        <li id="forecast-condition">${
+                          day.condition.description
+                        }</li>
           </ul>
           <img
             src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${

@@ -186,6 +186,7 @@ a span {
   font-size: 32px;
 }
 
-#current-des::first-letter {
+#current-des::first-letter,
+#forecast-condition::first-letter {
   text-transform: capitalize;
 }
