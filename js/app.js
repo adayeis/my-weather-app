@@ -1,12 +1,11 @@
-/*****************************************ONLOAD****************************************/
-// Onload data get function
-getCity("Istanbul");
-
-/*****************************************SEARCH BUTTON****************************************/
+/*****************************************SEARCH BUTTON API****************************************/
 function getCity(city) {
   let apiKey = "67ct2f0dc4c74e3fcab1f74do85ff4a4";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric `;
-  axios.get(apiUrl).then(writeCityData);
+  let weatherApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric `;
+  let forecastApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}
+`;
+  axios.get(weatherApiUrl).then(writeCityData);
+  axios.get(forecastApiUrl).then(writeCityForecastData);
 }
 
 // Search City get function
@@ -17,7 +16,27 @@ function searcingCity(event) {
   getCity(city);
 }
 
-// City Weather Result write function....
+// Search City Button Event
+let searchButton = document.querySelector("#search-button");
+searchButton.addEventListener("click", searcingCity);
+
+// Searc Button Enter
+function searcingCityEnter(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    let searchButton = document.querySelector("#search-button");
+    searchButton.click();
+  }
+}
+
+// Search Button Enter Event Add
+let searchCityElement = document.querySelector("#search-city");
+searchCityElement.addEventListener("keypress", searcingCityEnter); // search button ends
+
+// Onload data get function
+getCity("Istanbul");
+
+/*****************************************DISPLAY CITY WEATHER************************************/
 function writeCityData(response) {
   // City name
   let cityName = response.data.city;
@@ -71,22 +90,52 @@ function writeCityData(response) {
   }
 }
 
-// Search City Button Event
-let searchButton = document.querySelector("#search-button");
-searchButton.addEventListener("click", searcingCity);
+/*****************************************DISPLAY CITY FORECAST************************************/
+function formatDay(timestamp) {
+  let time = new Date(timestamp * 1000);
+  day = time.getDay();
+  let days = ["Sun", "Mon", "Thu", "Wed", "Tue", "Fri", "Sat"];
+  day = days[day];
 
-// Searc Button Enter
-function searcingCityEnter(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    let searchButton = document.querySelector("#search-button");
-    searchButton.click();
-  }
+  return day;
 }
 
-// Search Button Enter Event Add
-let searchCityElement = document.querySelector("#search-city");
-searchCityElement.addEventListener("keypress", searcingCityEnter); // search button ends
+function writeCityForecastData(response) {
+  let forecastData = response.data.daily;
+  console.log(forecastData);
+
+  let weatherForecast = document.querySelector("#weather-forecast");
+
+  let forecastHTML = ``;
+  forecastData.forEach(function (day, index) {
+    if (index < 6) {
+      forecastHTML += `    
+       <div class="col-6 col-sm-4 shadow-sm justify-content-center rounded-3 align-items-center forecast-days">
+          <ul>
+            <li class="days">${formatDay(day.time)}</li>
+                        <li>${day.condition.description}</li>
+          </ul>
+          <img
+            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              day.condition.icon
+            }.png"
+            alt=""
+            class="forecast-weather-emoji"
+          />
+          <ul>
+            <li class="forecast-temprature-max">${Math.round(
+              day.temperature.maximum
+            )}°C </li>
+            <li class="forecast-temprature-min">${Math.round(
+              day.temperature.minimum
+            )}°C </li>
+          </ul>
+        </div>
+      `;
+    }
+  });
+  weatherForecast.innerHTML = forecastHTML;
+} // display forecast ends
 
 /*****************************************CURRENT BUTTON****************************************/
 // Current City button get function

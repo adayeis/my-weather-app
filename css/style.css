@@ -41,7 +41,7 @@ li {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 50px auto;
   padding: 30px;
   border: 1px solid rgb(0, 0, 0);
@@ -75,9 +75,12 @@ li {
 }
 
 .bg-yellowsky .bg-yellowsky-dark {
-  background-color: rgba(255, 200, 124, 0.5);
+  background-color: rgba(252, 251, 121, 0.5);
 }
 
+.forecast-days:hover {
+  background-color: rgba(252, 251, 121, 0.3);
+}
 .forecast div {
   display: flex;
   float: left;
@@ -105,9 +108,14 @@ li {
   font-weight: 500;
 }
 
-.forecast-temprature {
+.forecast-temprature-max {
   font-size: 14px;
   font-weight: 500;
+}
+
+.forecast-temprature-min {
+  font-size: 12px;
+  font-weight: 400;
 }
 
 #search-city {
@@ -147,7 +155,7 @@ li {
 }
 
 #current-weather-icon {
-  width: 60%;
+  width: 50%;
   position: relative;
   top: 15px;
 }
