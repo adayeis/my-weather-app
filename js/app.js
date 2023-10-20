@@ -69,23 +69,14 @@ function writeCityData(response) {
     currentWind.innerHTML = cityWind;
 
     /*****************************************BG COLORS************************************/
+
     let container = document.querySelector("main");
-    let currentWeatherContainer = document.querySelector(
-      "#current-weather-container"
-    );
     if (cityTemp > 20) {
       container.classList.remove("bg-bluesky");
       container.classList.add("bg-yellowsky");
-      let currentWeatherContainer = document.querySelector(
-        "#current-weather-container"
-      );
-      currentWeatherContainer.classList.remove("bg-bluesky-dark");
-      currentWeatherContainer.classList.add("bg-yellowsky-dark");
     } else {
       container.classList.remove("bg-yellowsky");
       container.classList.add("bg-bluesky");
-      currentWeatherContainer.classList.remove("bg-yellowsky-dark");
-      currentWeatherContainer.classList.add("bg-bluesky-dark");
     }
   }
 }
@@ -111,8 +102,8 @@ function writeCityForecastData(response) {
     if (0 < index && index <= 6) {
       console.log(index);
       forecastHTML += `    
-       <div class="col-6 col-sm-4 shadow-sm justify-content-center rounded-3 align-items-center text-center forecast-days">
-          <ul>
+       <div class="col-6 col-sm-4 shadow-sm justify-content-evenly rounded-3 align-items-center forecast-days px-4">
+          <ul class="col-6">
             <li class="days">${formatDay(day.time)}</li>
                         <li>${day.condition.description}</li>
           </ul>
@@ -121,9 +112,9 @@ function writeCityForecastData(response) {
               day.condition.icon
             }.png"
             alt=""
-            class="forecast-weather-emoji"
+            class="col-1 forecast-weather-emoji text-center"
           />
-          <ul>
+          <ul class="col-2">
             <li class="forecast-temprature-max">${Math.round(
               day.temperature.maximum
             )}°C </li>
@@ -132,6 +123,8 @@ function writeCityForecastData(response) {
             )}°C </li>
           </ul>
         </div>
+        </div>
+
       `;
     }
   });

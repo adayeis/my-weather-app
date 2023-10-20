@@ -50,37 +50,28 @@ li {
   line-height: 1.5em;
 }
 
-.bg-yellowsky {
-  background-color: rgba(238, 230, 0, 0.2);
-}
-
 .bg-bluesky {
   background: radial-gradient(
     circle at 0.7% 1%,
-    rgb(215, 248, 247) 0%,
-    rgb(102, 188, 239) 100.2%
+    rgb(2, 188, 239) 0%,
+    rgb(215, 248, 247) 100.2%
   );
-}
-
-.bg-bluesky .bg-bluesky-dark {
-  background-color: rgba(102, 188, 239, 0.3);
 }
 
 .bg-yellowsky {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(255, 200, 124) 0%,
-    rgb(252, 251, 121) 90%
+  background: linear-gradient(
+    111.4deg,
+    rgb(209, 231, 235) 7.4%,
+    rgb(238, 219, 199) 51.4%,
+    rgb(255, 159, 122) 82.6%,
+    rgb(255, 109, 58) 100.2%
   );
 }
 
-.bg-yellowsky .bg-yellowsky-dark {
-  background-color: rgba(252, 251, 121, 0.5);
+.forecast-days:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.forecast-days:hover {
-  background-color: rgba(252, 251, 121, 0.3);
-}
 .forecast div {
   display: flex;
   float: left;
@@ -89,7 +80,7 @@ li {
 .current-weather {
   padding: 20px;
   border-radius: 30px;
-  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
 }
 
 .forecast ul {
@@ -100,7 +91,6 @@ li {
 .forecast-weather-emoji {
   width: 30%;
   opacity: 80%;
-  position: relative;
 }
 
 .days {
@@ -163,6 +153,10 @@ li {
 #current-temprature {
   position: relative;
   top: 20px;
+}
+
+#current-weather-container {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #codedby {
